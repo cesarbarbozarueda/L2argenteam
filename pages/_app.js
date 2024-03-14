@@ -1,18 +1,70 @@
-// pages/_app.js
+import "../styles/globals.css";
+import "@rainbow-me/rainbowkit/styles.css";
 
-// Importa la aplicación de Next.js
-import App from 'next/app';
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { configureChains, createClient, useAccount, WagmiConfig } from "wagmi";
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  goerli,
+  polygonMumbai,
+  optimismGoerli,
+  arbitrumGoerli,
+} from "wagmi/chains";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
+import MainLayout from "../layout/mainLayout";
+import { useRouter } from "next/router";
 
-// Función que devuelve la aplicación de Next.js
+const { chains, provider } = configureChains(
+  [
+    mainnet,
+    goerli,
+    polygon,
+    polygonMumbai,
+    optimism,
+    optimismGoerli,
+    arbitrum,
+    arbitrumGoerli,
+  ],
+  [alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY }), publicProvider()]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: "My Alchemy DApp",
+  chains,
+});
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors,
+  provider,
+});
+
+export { WagmiConfig, RainbowKitProvider };
+
 function MyApp({ Component, pageProps }) {
-  // Si estás en la ruta raíz, redirige a index.html
-  if (typeof window !== 'undefined' && window.location.pathname === '/') {
-    window.location.href = '/index.html';
-  }
-
-  // Devuelve la aplicación de Next.js normalmente
-  return <Component {...pageProps} />;
+  const router = useRouter()
+  const account = useAccount({
+    onConnect({ address, connector, isReconnected }) {
+      if (!isReconnected) router.reload();
+    },
+  });
+  return (
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider
+        modalSize="compact"
+        initialChain={process.env.NEXT_PUBLIC_DEFAULT_CHAIN}
+        chains={chains}
+      >
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
+      </RainbowKitProvider>
+    </WagmiConfig>
+  );
 }
 
-// Exporta la aplicación de Next.js
 export default MyApp;
