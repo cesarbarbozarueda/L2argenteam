@@ -121,7 +121,7 @@ body {
   transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Transición suave para el cambio de color del fondo, borde y texto */
 }
 .footer .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Color de fondo al pasar el mouse */
-  border-color: #36beff; /* Color del borde al pasar el mouse */
-  color: #fff; /* Color del texto al pasar el mouse */
+  background-color: rgba(255, 255, 255, 0.1) !important; /* Color de fondo al pasar el mouse */
+  border-color: #36beff !important; /* Color del borde al pasar el mouse */
+  color: #fff !important; /* Color del texto al pasar el mouse */
 }
