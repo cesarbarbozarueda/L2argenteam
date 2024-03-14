@@ -92,3 +92,14 @@ body {
   color: #fff;
   margin: 0 10px;
 }
+/* Estilos para los botones del menú */
+.menu .navbar-nav .nav-link {
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu .navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
