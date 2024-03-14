@@ -1,56 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Cuenta</title>
-    <link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Sitio Web</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS Personalizado -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Logo -->
-    <div class="logo-container">
-        <img src="logo.png" alt="Logo">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
     </div>
-
-    <!-- Imagen a la izquierda -->
-    <div class="left-image">
-        <img src="left-image.png" alt="Imagen Izquierda">
+    <div class="content">
+      <div class="left-image">
+        <img src="left-image.png" alt="Left Image">
+      </div>
+      <div class="register-form">
+        <h2>Create Account</h2>
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+        <button>Register</button>
+      </div>
     </div>
-
-    <!-- Formulario de Crear Cuenta -->
-    <div class="register-form">
-        <h2>Crear Cuenta</h2>
-        <form action="register.php" method="post">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="username">Cuenta:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirmar Contraseña:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
-            <button type="submit">Registrarse</button>
-        </form>
+    <div class="footer">
+      <a href="#">Contact</a>
+      <a href="#">Discord</a>
+      <a href="#">About Us</a>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Discord</a></li>
-                <li><a href="#">Nosotros</a></li>
-            </ul>
-        </nav>
-    </footer>
+  </div>
 </body>
 </html>
