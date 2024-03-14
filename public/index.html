@@ -17,13 +17,23 @@
       <img src="logo.png" alt="Logo">
     </div>
     <!-- Menú -->
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Descarga</a></li>
-        <li><a href="#">Donación</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Info</a></li>
+    <nav class="menu navbar navbar-expand-lg navbar-dark bg-dark">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Descarga</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Donación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Info</a>
+        </li>
       </ul>
     </nav>
     <div class="content">
@@ -36,17 +46,30 @@
         <input type="text" placeholder="Username">
         <input type="password" placeholder="Password">
         <input type="password" placeholder="Confirm Password">
-        <button>Register</button>
+        <button class="btn btn-primary">Register</button>
       </div>
     </div>
 	<div>
 	  <a href="https://l2.hopzone.net/site/vote/106029/1" target="_blank"><img src="https://l2.hopzone.net/assets/img/banners/vote_banners/banner_4.png" alt="Vote for L2ARGENTEAM.NETLIFY.APP" title="L2.HOPZONE.NET – Lineage 2 Servers ranking" style="border:0; position: fixed; z-index:99999; bottom: 0; right: 0; width:140px; height: 120px;"></a>
 	  </div>
-    <div class="footer">
-      <a href="https://discord.gg/QEzjRjc6TJ" target="_blank">Contact</a>
-      <a href="https://discord.gg/QEzjRjc6TJ" target="_blank">Discord</a>
-      <a href="https://discord.gg/QEzjRjc6TJ" target="_blank">About Us</a>
+    <div class="footer navbar navbar-expand-lg navbar-dark bg-dark">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/QEzjRjc6TJ" target="_blank">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/QEzjRjc6TJ" target="_blank">Discord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/QEzjRjc6TJ" target="_blank">About Us</a>
+        </li>
+      </ul>
     </div>
   </div>
+  <!-- Evitar almacenamiento en caché -->
+  <script>
+    // Evitar almacenamiento en caché en el navegador
+    document.getElementsByTagName("html")[0].setAttribute("data-n-head", "true");
+  </script>
 </body>
 </html>
