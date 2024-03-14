@@ -21,8 +21,16 @@ body {
   margin-right: 0;
 }
 .menu ul li a {
-  color: blue;
+  color: #fff; /* Color del texto */
   text-decoration: none;
+  border: 1px solid transparent; /* Borde inicialmente transparente */
+  border-radius: 5px;
+  padding: 8px 15px;
+  transition: border-color 0.3s, color 0.3s; /* Transición suave para el cambio de color del borde y texto */
+}
+.menu ul li a:hover {
+  background-color: #343a40; /* Color de fondo al pasar el mouse */
+  border-color: #36beff; /* Color del borde al pasar el mouse */
 }
 /* Estilos para los botones del menú */
 .menu .navbar-nav .nav-link {
@@ -84,7 +92,6 @@ body {
   border: none;
   border-radius: 5px;
 }
-
 .register-form button {
   width: 100%;
   padding: 10px;
@@ -94,26 +101,26 @@ body {
   color: #fff;
   cursor: pointer;
 }
-
 .footer {
   text-align: center;
   margin-top: 20px;
   background-color: #000 !important; /* Asegúrate de que el color de fondo sea negro */
   padding: 20px 0; /* Añade un poco de espacio entre los elementos del footer */
 }
-
 .footer a {
   color: #fff;
   margin: 0 10px;
 }
 .footer .nav-link {
-  color: #fff;
+  color: #fff; /* Color del texto */
   margin: 0 10px;
   padding: 5px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Transición suave para el cambio de color del fondo, borde y texto */
 }
 
 .footer .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* Color de fondo al pasar el mouse */
+  border-color: #36beff; /* Color del borde al pasar el mouse */
+  color: #fff; /* Color del texto al pasar el mouse */
 }
