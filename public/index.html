@@ -38,44 +38,44 @@
 		
 		
 		
-<li class="nav-item">
-    <a class="nav-link" id="statusButton" href="#">
-        Status
-        <img id="statusImage" src="" alt="Server " style="width: 20px; height: 20px;">
-    </a>
-</li>
+		<li class="nav-item">
+			<a class="nav-link" id="statusButton" href="#">
+				Server 
+				<img id="statusImage" src="" alt="Status" style="width: 20px; height: 20px;">
+			</a>
+		</li>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    // Función para cargar la imagen de estado
-    function loadStatusImage() {
-        // Realizar una solicitud AJAX para obtener la imagen de estado desde status.php
-        $.ajax({
-            url: 'https://www.brisoft.com.ar/status.php',
-            type: 'GET',
-            dataType: 'json', // Asegúrate de que status.php devuelva un JSON con la URL de la imagen
-            success: function(response) {
-                // Actualizar la imagen del botón con la URL obtenida
-                $('#statusImage').attr('src', response.url);
-            },
-            error: function(xhr, status, error) {
-                // Manejar errores si ocurren
-                console.error(error);
-            }
-        });
-    }
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			// Función para cargar la imagen de estado
+			function loadStatusImage() {
+				// Realizar una solicitud AJAX para obtener la imagen de estado desde status.php
+				$.ajax({
+					url: 'https://www.brisoft.com.ar/status.php',
+					type: 'GET',
+					dataType: 'json', // Asegúrate de que status.php devuelva un JSON con la URL de la imagen
+					success: function(response) {
+						// Actualizar la imagen del botón con la URL obtenida
+						$('#statusImage').attr('src', response.url);
+					},
+					error: function(xhr, status, error) {
+						// Manejar errores si ocurren
+						console.error(error);
+					}
+				});
+			}
 
-    // Ejecutar la función para cargar la imagen cuando se carga la página
-    $(document).ready(function(){
-        loadStatusImage();
-    });
+			// Ejecutar la función para cargar la imagen cuando se carga la página
+			$(document).ready(function(){
+				loadStatusImage();
+			});
 
-    // Adjuntar la función para cargar la imagen al evento de clic del botón
-    $('#statusButton').click(function(e) {
-        e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-        loadStatusImage(); // Cargar la imagen cuando se hace clic en el botón
-    });
-</script>
+			// Adjuntar la función para cargar la imagen al evento de clic del botón
+			$('#statusButton').click(function(e) {
+				e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+				loadStatusImage(); // Cargar la imagen cuando se hace clic en el botón
+			});
+		</script>
 
 
 
