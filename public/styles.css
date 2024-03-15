@@ -125,6 +125,11 @@ body {
   background-color: #007bff; /* Fondo azul oscuro al pasar el mouse */
   border-color: #007bff; /* Borde azul oscuro al pasar el mouse */
 }
+
+.mirror-image {
+  transform: scaleX(-1);
+}
+
 .footer {
   text-align: center;
   margin-top: 20px;
