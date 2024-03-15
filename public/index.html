@@ -49,6 +49,7 @@
 <script>
     // Función para verificar el estado del puerto
 // Función para verificar el estado del puerto
+// Función para verificar el estado del puerto
 function checkPortStatus() {
     // Realizar una solicitud AJAX a status.php
     $.ajax({
@@ -71,16 +72,16 @@ function checkPortStatus() {
     });
 }
 
-    // Ejecutar la función de verificación cuando se carga la página
-    $(document).ready(function(){
-        checkPortStatus();
-    });
+// Ejecutar la función de verificación cuando se carga la página
+$(document).ready(function(){
+    checkPortStatus();
+});
 
-    // Adjuntar la función de verificación al evento de clic del botón
-    $('#statusButton').click(function(e) {
-        e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-        checkPortStatus(); // Verificar el estado del puerto cuando se hace clic en el botón
-    });
+// Adjuntar la función de verificación al evento de clic del botón
+$('#statusButton').click(function(e) {
+    e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+    checkPortStatus(); // Verificar el estado del puerto cuando se hace clic en el botón
+});
 </script>
 
 
