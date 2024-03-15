@@ -38,49 +38,46 @@
 		
 		
 		
-<li class="nav-item">
-    <a class="nav-link" id="statusButton" href="#">
-        Status
-        <img id="statusImage" src="" alt="Status" style="width: 20px; height: 20px;">
-    </a>
-</li>
+		<li class="nav-item">
+			<a class="nav-link" id="statusButton" href="#">
+				Server 
+				<img id="statusImage" src="" alt="Status" style="width: 20px; height: 20px;">
+			</a>
+		</li>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    // Función para cargar la imagen de estado
-    function loadStatusImage() {
-        // Realizar una solicitud AJAX a status.php
-        $.ajax({
-            url: 'https://www.brisoft.com.ar/status.php',
-            type: 'GET',
-            success: function(response) {
-                // Actualizar la imagen del botón según la respuesta
-                if (response === 'open') {
-                    $('#statusImage').attr('src', 'https://www.brisoft.com.ar/ok.png');
-                } else {
-                    // Si no se puede cargar la imagen remota, cargar la imagen local
-                    $('#statusImage').attr('src', 'off.png');
-                }
-            },
-            error: function(xhr, status, error) {
-                // Si ocurre un error al cargar la imagen remota, cargar la imagen local
-                $('#statusImage').attr('src', 'off.png');
-                console.error(error);
-            }
-        });
-    }
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			// Función para cargar la imagen de estado
+			function loadStatusImage() {
+				// Realizar una solicitud AJAX para obtener la imagen de estado desde status.php
+				$.ajax({
+					url: 'https://www.brisoft.com.ar/status.php',
+					type: 'GET',
+					dataType: 'json', // Asegúrate de que status.php devuelva un JSON con la URL de la imagen
+					success: function(response) {
+						// Actualizar la imagen del botón con la URL obtenida
+						$('#statusImage').attr('src', response.url);
+					},
+					error: function(xhr, status, error) {
+						// En caso de error al cargar la imagen remota, cargar la imagen local
+						$('#statusImage').attr('src', 'off.png');
+						console.error(error);
+					}
+				});
+			}
 
-    // Ejecutar la función de carga de imagen al cargar la página
-    $(document).ready(function(){
-        loadStatusImage();
-    });
+			// Ejecutar la función para cargar la imagen cuando se carga la página
+			$(document).ready(function(){
+				loadStatusImage();
+			});
 
-    // Adjuntar la función de carga de imagen al evento de clic del botón
-    $('#statusButton').click(function(e) {
-        e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-        loadStatusImage(); // Cargar la imagen de estado cuando se hace clic en el botón
-    });
-</script>
+			// Adjuntar la función para cargar la imagen al evento de clic del botón
+			$('#statusButton').click(function(e) {
+				e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+				loadStatusImage(); // Cargar la imagen cuando se hace clic en el botón
+			});
+		</script>
+
 
 
 
