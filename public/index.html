@@ -10,6 +10,7 @@
   <link href="styles.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -34,6 +35,25 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Info</a>
         </li>
+		<li class="nav-item">
+			<a class="nav-link" href="status.php" target="_blank">Status</a>
+		</li>
+		<script>
+			$(document).ready(function(){
+				$.ajax({
+					url: 'status.php',
+					type: 'GET',
+					success: function(response) {
+						// Actualizar el contenido del enlace con el resultado del script PHP
+						$('#statusLink').html(response);
+					},
+					error: function(xhr, status, error) {
+						// Manejar errores si ocurren
+						console.error(error);
+					}
+				});
+			});
+		</script>
       </ul>
     </nav>
     <div class="content">
