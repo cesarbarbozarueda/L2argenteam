@@ -48,27 +48,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     // Función para verificar el estado del puerto
-    function checkPortStatus() {
-        // Realizar una solicitud AJAX a status.php
-        $.ajax({
-            url: 'https://www.brisoft.com.ar/status.php',
-            type: 'GET',
-            success: function(response) {
-			console.log(response); // Agregar esta línea para verificar la respuesta
-			// Actualizar la imagen del botón según el estado del puerto
-                // Actualizar la imagen del botón según el estado del puerto
-                if (response === 'open') {
-                    $('#statusImage').attr('src', 'ok.png');
-                } else {
-                    $('#statusImage').attr('src', 'off.png');
-                }
-            },
-            error: function(xhr, status, error) {
-                // Manejar errores si ocurren
-                console.error(error);
+// Función para verificar el estado del puerto
+function checkPortStatus() {
+    // Realizar una solicitud AJAX a status.php
+    $.ajax({
+        url: 'https://www.brisoft.com.ar/status.php',
+        type: 'GET',
+        success: function(response) {
+            // Actualizar la imagen del botón según el estado del puerto
+            if (response === 'open') {
+                $('#statusImage').attr('src', 'ok.png');
+            } else if (response === 'closed') {
+                $('#statusImage').attr('src', 'off.png');
+            } else {
+                console.error('Respuesta inesperada del servidor:', response);
             }
-        });
-    }
+        },
+        error: function(xhr, status, error) {
+            // Manejar errores si ocurren
+            console.error(error);
+        }
+    });
+}
 
     // Ejecutar la función de verificación cuando se carga la página
     $(document).ready(function(){
