@@ -101,6 +101,30 @@ body {
   color: #fff;
   cursor: pointer;
 }
+.donation-section .card {
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Letras blancas */
+  border: 1px solid #36beff; /* Borde azul */
+}
+
+.donation-section .card-title {
+  color: #fff; /* Letras blancas */
+}
+
+.donation-section .card-text {
+  color: #fff; /* Letras blancas */
+}
+
+.donation-section .btn {
+  background-color: #36beff; /* Fondo azul */
+  border-color: #36beff; /* Borde azul */
+  color: #fff; /* Letras blancas */
+}
+
+.donation-section .btn:hover {
+  background-color: #007bff; /* Fondo azul oscuro al pasar el mouse */
+  border-color: #007bff; /* Borde azul oscuro al pasar el mouse */
+}
 .footer {
   text-align: center;
   margin-top: 20px;
