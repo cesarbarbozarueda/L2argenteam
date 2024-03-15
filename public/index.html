@@ -47,42 +47,36 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    // Función para verificar el estado del puerto
-// Función para verificar el estado del puerto
-// Función para verificar el estado del puerto
-function checkPortStatus() {
-    // Realizar una solicitud AJAX a status.php
-    $.ajax({
-        url: 'https://www.brisoft.com.ar/status.php',
-        type: 'GET',
-        success: function(response) {
-            // Actualizar la imagen del botón según el estado del puerto
-            if (response === 'open') {
-                $('#statusImage').attr('src', 'ok.png');
-            } else if (response === 'closed') {
-                $('#statusImage').attr('src', 'off.png');
-            } else {
-                console.error('Respuesta inesperada del servidor:', response);
+    // Función para cargar la imagen de estado
+    function loadStatusImage() {
+        // Realizar una solicitud AJAX para obtener la imagen de estado desde status.php
+        $.ajax({
+            url: 'https://www.brisoft.com.ar/status.php',
+            type: 'GET',
+            dataType: 'json', // Asegúrate de que status.php devuelva un JSON con la URL de la imagen
+            success: function(response) {
+                // Actualizar la imagen del botón con la URL obtenida
+                $('#statusImage').attr('src', response.url);
+            },
+            error: function(xhr, status, error) {
+                // Manejar errores si ocurren
+                console.error(error);
             }
-        },
-        error: function(xhr, status, error) {
-            // Manejar errores si ocurren
-            console.error(error);
-        }
+        });
+    }
+
+    // Ejecutar la función para cargar la imagen cuando se carga la página
+    $(document).ready(function(){
+        loadStatusImage();
     });
-}
 
-// Ejecutar la función de verificación cuando se carga la página
-$(document).ready(function(){
-    checkPortStatus();
-});
-
-// Adjuntar la función de verificación al evento de clic del botón
-$('#statusButton').click(function(e) {
-    e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-    checkPortStatus(); // Verificar el estado del puerto cuando se hace clic en el botón
-});
+    // Adjuntar la función para cargar la imagen al evento de clic del botón
+    $('#statusButton').click(function(e) {
+        e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+        loadStatusImage(); // Cargar la imagen cuando se hace clic en el botón
+    });
 </script>
+
 
 
 
