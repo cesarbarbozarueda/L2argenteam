@@ -54,6 +54,8 @@
             url: 'https://www.brisoft.com.ar/status.php',
             type: 'GET',
             success: function(response) {
+			console.log(response); // Agregar esta línea para verificar la respuesta
+			// Actualizar la imagen del botón según el estado del puerto
                 // Actualizar la imagen del botón según el estado del puerto
                 if (response === 'open') {
                     $('#statusImage').attr('src', 'ok.png');
