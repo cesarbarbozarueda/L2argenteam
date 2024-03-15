@@ -247,6 +247,10 @@
 				  <td style="color: white;">EVENTOS</td>
 				  <td style="color: white;">Available</td>
 				</tr>
+				<tr>
+				   <td style="color: white;">Jugadores en línea</td>
+                   <td id="jugadores-en-linea" style="color: white;"></td>
+				</tr>
 			  </tbody>
 			</table>
 		  </div>
@@ -256,6 +260,18 @@
 		</div>
 	  </div>
 	</div>
+	<!-- Script de JavaScript -->
+	<script>
+			// Realizar una solicitud AJAX para obtener el total de jugadores en línea
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  document.getElementById("jugadores-en-linea").innerHTML = this.responseText;
+			}
+		  };
+		  xhttp.open("GET", "https://brisoft.com.ar/l2acis/playeronline.php", true);
+		  xhttp.send();
+	</script>
 	<!-- Separador -->
 	<div class="separator">
 		<div class="row justify-content-center">
