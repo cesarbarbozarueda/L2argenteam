@@ -51,7 +51,7 @@
     function checkPortStatus() {
         // Realizar una solicitud AJAX a status.php
         $.ajax({
-            url: 'https://www.brisoft.com.ar/status.php', // Cambiar la URL según la ubicación de status.php
+            url: 'https://www.brisoft.com.ar/status.php',
             type: 'GET',
             success: function(response) {
                 // Actualizar la imagen del botón según el estado del puerto
@@ -72,7 +72,14 @@
     $(document).ready(function(){
         checkPortStatus();
     });
+
+    // Adjuntar la función de verificación al evento de clic del botón
+    $('#statusButton').click(function(e) {
+        e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+        checkPortStatus(); // Verificar el estado del puerto cuando se hace clic en el botón
+    });
 </script>
+
 
 
 
