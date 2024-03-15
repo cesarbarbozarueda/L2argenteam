@@ -36,24 +36,41 @@
           <a class="nav-link" href="#">Info</a>
         </li>
 		<li class="nav-item">
-			<a class="nav-link" href="status.php" target="_blank">Status</a>
+			<a class="nav-link" id="statusButton" href="#">
+				Status
+				<img id="statusImage" src="" alt="Status" style="width: 20px; height: 20px;">
+			</a>
 		</li>
+
 		<script>
-			$(document).ready(function(){
+			// Función para verificar el estado del puerto
+			function checkPortStatus() {
+				// Realizar una solicitud AJAX a status.php
 				$.ajax({
 					url: 'status.php',
 					type: 'GET',
 					success: function(response) {
-						// Actualizar el contenido del enlace con el resultado del script PHP
-						$('#statusLink').html(response);
+						// Actualizar la imagen del botón según el estado del puerto
+						if (response === 'open') {
+							$('#statusImage').attr('src', 'ok.png');
+						} else {
+							$('#statusImage').attr('src', 'off.png');
+						}
 					},
 					error: function(xhr, status, error) {
 						// Manejar errores si ocurren
 						console.error(error);
 					}
 				});
+			}
+
+			// Ejecutar la función de verificación cuando se carga la página
+			$(document).ready(function(){
+				checkPortStatus();
 			});
 		</script>
+
+
       </ul>
     </nav>
     <div class="content">
