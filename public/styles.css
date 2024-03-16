@@ -109,6 +109,7 @@ body {
 
 .donation-section .card-title {
   color: #fff; /* Letras blancas */
+  text-align: center!important;
 }
 
 .donation-section .card-text {
@@ -149,7 +150,7 @@ body {
     }
 
 	p {
-	 text-align: center!important;
+	text-align: center!important;
 	line-height: 22px!important;
 	}
 
