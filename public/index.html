@@ -13,20 +13,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-  <!-- Bootstrap y jQuery desde CDN -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  <!-- Script personalizado -->
-  <script>
-    $(document).ready(function(){
-      // Configuración del botón de registro para abrir el modal
-      $('.register-btn').click(function(){
-        $('#registerModal').modal('show');
-      });
-    });
-  </script>
   <div class="container">
     <div class="logo">
       <img src="logo.png" alt="Logo">
@@ -59,7 +45,7 @@
 			</a>
 		</li>
 
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script>
 			// Función para cargar la imagen de estado
 			function loadStatusImage() {
@@ -98,18 +84,37 @@
       <div class="left-image">
         <img src="left-image.png" alt="Left Image">
       </div>
-		  <div class="register-form">
-			<h2>Create Account</h2>
-			<input type="text" placeholder="Email">
-			<input type="text" placeholder="Username">
-			<input type="password" placeholder="Password">
-			<input type="password" placeholder="Confirm Password">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">
-				Register
-			</button>
-		  </div>
+      <div class="register-form">
+        <h2>Create Account</h2>
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">
+  Register
+</button>
+<!-- Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Crear Cuenta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Solo necesitas pegar el system dentro de tu L2. Y la cuenta que ingreses en el juego se creará automáticamente.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
     </div>
-	
+  </div>
+</div>
+
+      </div>
+    </div>
 	<!-- Separador -->
 	<div class="separator">
 		<div class="row justify-content-center">
@@ -117,7 +122,6 @@
 		</div>
 	  </div>
 	</div>
-	
 	<!-- Descargas -->
 	<div class="download-section" id="Descarga">
 	  <div class="container">
