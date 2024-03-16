@@ -129,6 +129,29 @@ body {
 .mirror-image {
   transform: scaleX(-1);
 }
+    /* Estilo personalizado para el modal */
+    .modal-content {
+      background-color: #000; /* Fondo negro */
+      color: #fff; /* Texto blanco */
+    }
+    .modal-header {
+      border-bottom: none; /* Elimina el borde inferior del encabezado */
+    }
+    .modal-title {
+      font-size: 1.5rem; /* Tamaño del título del modal */
+    }
+    .close {
+		font-size: 1rem !important; /* Tamaño de la X de cerrar */
+		 padding: 0 !important; /* Elimina el relleno alrededor de la X */
+		width: 3rem !important; /* Reducción del tamaño horizontal */
+		height: 3rem !important; /* Reducción del tamaño vertical */
+		line-height: 1 !important; /* Ajusta la altura de línea para centrar la X */
+    }
+
+	p {
+	 text-align: center!important;
+	line-height: 22px!important;
+	}
 
 .footer {
   text-align: center;

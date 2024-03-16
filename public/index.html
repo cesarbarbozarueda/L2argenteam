@@ -84,36 +84,68 @@
       <div class="left-image">
         <img src="left-image.png" alt="Left Image">
       </div>
-      <div class="register-form">
+    <div class="register-form">
         <h2>Create Account</h2>
         <input type="text" placeholder="Email">
         <input type="text" placeholder="Username">
         <input type="password" placeholder="Password">
         <input type="password" placeholder="Confirm Password">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">
-  Register
-</button>
-<!-- Modal -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="registerModalLabel">Crear Cuenta</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Solo necesitas pegar el system dentro de tu L2. Y la cuenta que ingreses en el juego se creará automáticamente.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+		<div id="messageContainer"></div>
+			<!-- Botón de registro -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">
+				Register
+			</button>
+		<div id="messageContainer"></div>
 
-      </div>
+		  <!-- Modal -->
+		  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="registerModalLabel">Autocuenta Activado</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+					<div class="row justify-content-center">
+						<!-- Contenedor del mensaje -->
+						INFORMACION IMPORTANTE!<br>
+						<p>El sistema de autocuentas esta activo<br>
+						desde el juego, debes ingresar un usuario<br>
+						y contraseña y se creara la cuenta<br>
+						Recuerda que para jugar
+						precisas descargar el system<br>
+						descomprimirlo y copiarlo dentro de la<br>
+						carpeta del juego Lineage 2 Interlude<br>
+						Si necesitas ayuda! Pidela en nuestro canal de Discord</p>
+					</div>
+				</div>
+
+			  </div>
+			</div>
+		  </div>
+
+		  <!-- JavaScript -->
+		  <script>
+			function showMessage() {
+			  // Aquí puedes modificar el mensaje según lo necesites
+			  var message = "¡Registro exitoso!";
+			  // Mostrar el mensaje en el contenedor del modal
+			  document.getElementById("messageContainer").innerHTML = message;
+			  // Mostrar el modal
+			  $('#registerModal').modal('show');
+			}
+		  </script>
+
+		  <!-- jQuery y Bootstrap JS -->
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
+    </div>
     </div>
 	<!-- Separador -->
 	<div class="separator">
