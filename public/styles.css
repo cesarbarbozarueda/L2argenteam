@@ -7,6 +7,8 @@ body {
 .menu {
   text-align: center;
   background-color: #000 !important; /* Asegúrate de que el color de fondo sea negro */
+  margin-top: 20px; /* Añadir un poco de espacio arriba de cada sección */
+  margin-bottom: 20px; /* Añadir un poco de espacio abajo de cada sección */
 }
 .menu ul {
   list-style: none;
@@ -46,14 +48,21 @@ body {
 
 /* Estilos para el contenido */
 .container {
-  max-width: 1140px;
-  margin: auto;
-  padding: 15px;
+  max-width: 1140px; /* Ancho máximo del contenedor */
+  margin: auto; /* Centrar el contenedor en la página */
+  padding: 0 15px; /* Añadir un poco de espacio a los lados del contenedor */
+}
+/* Estilo para el contenido */
+.content, .download-section, .donation-section, 
+.contact-section, .info-section, .vote-section, .footer {
+  margin-top: 20px; /* Añadir un poco de espacio arriba de cada sección */
+  margin-bottom: 20px; /* Añadir un poco de espacio abajo de cada sección */
 }
 
 .logo {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 20px; /* Añadir un poco de espacio arriba de cada sección */
+  margin-bottom: 20px; /* Añadir un poco de espacio abajo de cada sección */
 }
 
 .logo img {
