@@ -199,57 +199,69 @@
 		</div>
 	  </div>
 	</div>
+	
+	
 	<!-- Donacion -->
 	<div class="donation-section" id="Donación">
 	  <div class="container">
 		<div class="row justify-content-center">
 		  <div class="col-md-3 mb-4">
+			<!-- Donacion Mercadopago -->
 			<div class="card">
 			  <div class="card-body">
-				<h5 class="card-title">Donar</h5>
-				<p class="card-text">Equivale a adena</p>
-				<p class="card-text">Equivale a goldbar</p>
-				<p class="card-text">Equivale a enchant</p>
-				<button class="btn btn-success btn-block">Donar</button>
+				<h5 class="card-title">MercadoPago</h5>
+				<p class="card-text">¡Tu generosa donación es caritativa y nos ayuda a costear los gastos del servidor!</p>
+				<div class="input-group mb-3">
+				  <input type="number" id="donationAmountMercadoPago" class="form-control" placeholder="Ingrese el monto" aria-label="Ingrese el monto" aria-describedby="basic-addon2">
+				  <div class="input-group-append">
+					<!-- Reemplaza "URL_DE_TU_PÁGINA_DE_MERCADO_PAGO" con la URL de tu página de Mercado Pago -->
+					<button class="btn btn-success" id="mercadoPagoButton">Donar</button>
+				  </div>
+				</div>
 			  </div>
 			</div>
 		  </div>
+		  
+		  <!-- Script Mercadopago -->
+		  <script>
+			document.getElementById("mercadoPagoButton").addEventListener("click", function() {
+			  var donationAmountMercadoPago = document.getElementById("donationAmountMercadoPago").value;
+			  // Reemplaza "URL_DE_TU_PÁGINA_DE_MERCADO_PAGO" con la URL de tu página de Mercado Pago
+			  var mercadoPagoURL = "https://link.mercadopago.com.ar/l2argenteam?amount=" + donationAmountMercadoPago;
+			  window.open(mercadoPagoURL, "_blank");
+			});
+		  </script>
+		  
 		  <div class="col-md-3 mb-4">
+			<!-- Donacion Cafecito -->
 			<div class="card">
 			  <div class="card-body">
-				<h5 class="card-title">Donar</h5>
-				<p class="card-text">Equivale a adena</p>
-				<p class="card-text">Equivale a goldbar</p>
-				<p class="card-text">Equivale a enchant</p>
-				<button class="btn btn-success btn-block">Donar</button>
-			  </div>
-			</div>
-		  </div>
-		  <div class="col-md-3 mb-4">
-			<div class="card">
-			  <div class="card-body">
-				<h5 class="card-title">Donar</h5>
-				<p class="card-text">Equivale a adena</p>
-				<p class="card-text">Equivale a goldbar</p>
-				<p class="card-text">Equivale a enchant</p>
-				<button class="btn btn-success btn-block">Donar</button>
-			  </div>
-			</div>
-		  </div>
-		  <div class="col-md-3 mb-4">
-			<div class="card">
-			  <div class="card-body">
-				<h5 class="card-title">Donar</h5>
-				<p class="card-text">Equivale a adena</p>
-				<p class="card-text">Equivale a goldbar</p>
-				<p class="card-text">Equivale a enchant</p>
-				<button class="btn btn-success btn-block">Donar</button>
+				<h5 class="card-title">Cafecito</h5>
+				<p class="card-text">¡Tu generosa donación es caritativa y nos ayuda a costear los gastos del servidor!</p>
+				<div class="input-group mb-3">
+				  <input type="number" id="donationAmountCafecito" class="form-control" placeholder="Ingrese el monto" aria-label="Ingrese el monto" aria-describedby="basic-addon2">
+				  <div class="input-group-append">
+					<!-- Cambia "TU_USUARIO" por tu usuario de Cafecito -->
+					<button id="cafecitoButton" class="btn btn-success">Donar</button>
+				  </div>
+				</div>
 			  </div>
 			</div>
 		  </div>
 		</div>
 	  </div>
 	</div>
+
+	<!-- Script Cafecito -->
+	<script>
+	  document.getElementById("cafecitoButton").addEventListener("click", function() {
+		var donationAmountCafecito = document.getElementById("donationAmountCafecito").value;
+		// Reemplaza "TU_USUARIO" con tu usuario de Cafecito
+		var cafecitoURL = "https://cafecito.app/l2argenteam?via=Tu_Proyecto&buy=" + donationAmountCafecito;
+		window.open(cafecitoURL, "_blank");
+	  });
+	</script>
+
 	<!-- Separador -->
 	<div class="separator">
 		<div class="row justify-content-center">
