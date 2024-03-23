@@ -33,34 +33,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- IDIOMAS -->
-  <script src="language.js"></script>
 </head>
 <body>
-  <!-- Botones para cambiar el idioma -->
-  <button onclick="traducir('es')">Español</button>
-  <button onclick="traducir('en')">Inglés</button>
-  <button onclick="traducir('pt')">Portugués</button>
-  <script>
-    function traducir(idioma) {
-      // Obtener texto a traducir
-      var titulo = document.getElementById("titulo").textContent;
-      var parrafo = document.getElementById("parrafo").textContent;
-
-      // Llamar a la API de Google Translate
-      fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${idioma}&dt=t&q=${encodeURIComponent(titulo)}&q=${encodeURIComponent(parrafo)}`)
-        .then(response => response.json())
-        .then(data => {
-          // Actualizar el contenido traducido
-          document.getElementById("titulo").textContent = data[0][0][0];
-          document.getElementById("parrafo").textContent = data[0][1][0];
-        })
-        .catch(error => console.error('Error al traducir:', error));
-    }
-  </script>
-
-
-
 	<script>
 		// Función para deshabilitar el clic derecho
 		function disableRightClick(event) {
@@ -78,27 +52,27 @@
     <!-- Menú -->
     <nav class="menu navbar navbar-expand-lg navbar-dark bg-dark">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
+        <li class="nav-item" id="home">
+          <a class="nav-link" href="#home">Principal</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="downloads">
           <a class="nav-link" href="#Descarga">Descarga</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="donation">
           <a class="nav-link" href="#Donación">Donación</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" id="contact">
           <a class="nav-link" href="#Contacto">Contacto</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Info">Info</a>
+        <li class="nav-item" id="info">
+          <a class="nav-link" href="#Info">Informacion</a>
         </li>
-		<li class="nav-item">
+		<li class="nav-item" id="vote">
           <a class="nav-link" href="#Votar">Votar</a>
         </li>
-		<li class="nav-item" id="home">
+		<li class="nav-item" id="status">
 			<a class="nav-link" id="statusButton" href="#">
-				Server 
+				Estado 
 				<img id="statusImage" src="" alt="Status" style="width: 20px; height: 20px;">
 			</a>
 		</li>
