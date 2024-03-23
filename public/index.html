@@ -33,8 +33,34 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- IDIOMAS -->
+  <script src="language.js"></script>
 </head>
 <body>
+  <!-- Botones para cambiar el idioma -->
+  <button onclick="traducir('es')">Español</button>
+  <button onclick="traducir('en')">Inglés</button>
+  <button onclick="traducir('pt')">Portugués</button>
+  <script>
+    function traducir(idioma) {
+      // Obtener texto a traducir
+      var titulo = document.getElementById("titulo").textContent;
+      var parrafo = document.getElementById("parrafo").textContent;
+
+      // Llamar a la API de Google Translate
+      fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${idioma}&dt=t&q=${encodeURIComponent(titulo)}&q=${encodeURIComponent(parrafo)}`)
+        .then(response => response.json())
+        .then(data => {
+          // Actualizar el contenido traducido
+          document.getElementById("titulo").textContent = data[0][0][0];
+          document.getElementById("parrafo").textContent = data[0][1][0];
+        })
+        .catch(error => console.error('Error al traducir:', error));
+    }
+  </script>
+
+
+
 	<script>
 		// Función para deshabilitar el clic derecho
 		function disableRightClick(event) {
