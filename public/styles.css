@@ -4,6 +4,12 @@ body {
   color: #fff;
   font-family: 'Roboto', sans-serif;
 }
+#google_translate_element {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Asegura que el elemento esté encima de otros elementos */
+}
 .menu {
   text-align: center;
   background-color: #000 !important; /* Asegúrate de que el color de fondo sea negro */
@@ -186,4 +192,19 @@ body {
   background-color: rgba(255, 255, 255, 0.1) !important; /* Color de fondo al pasar el mouse */
   border-color: #36beff !important; /* Color del borde al pasar el mouse */
   color: #fff !important; /* Color del texto al pasar el mouse */
+}
+.languages {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-link {
+  margin-left: 10px;
+}
+
+.flag {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
 }
